@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+includeTracking: true
+---
+{% include "partials/skip-link.njk" %}
+{% include "partials/gtm-noscript.njk" %}
+{% include "partials/nav-full.njk" %}
+{% include "partials/mobile-menu.njk" %}
+
+{{ content | safe }}
+
+{% include "partials/contact-form.njk" %}
+{% include "partials/footer-full.njk" %}
+{% include "partials/whatsapp-fab.njk" %}
+
+<script src="/assets/js/main.js?v={{ buildHash }}" defer></script>
+{% if isHome %}
+<script src="/assets/js/nav-indicator.js?v={{ buildHash }}" defer></script>
+{% endif %}

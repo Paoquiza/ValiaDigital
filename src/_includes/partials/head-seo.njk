@@ -1,0 +1,15 @@
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+{% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ ogDescription or description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical or site.url }}">
+<meta property="og:image" content="{{ ogImage or site.ogImage }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ ogDescription or description }}">

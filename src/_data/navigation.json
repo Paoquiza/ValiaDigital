@@ -1,0 +1,8 @@
+{
+  "main": [
+    { "label": "Servicios", "anchor": "servicios" },
+    { "label": "Proceso", "anchor": "proceso" },
+    { "label": "Nosotros", "anchor": "nosotros" },
+    { "label": "Contacto", "anchor": "contacto" }
+  ]
+}

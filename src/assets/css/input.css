@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ BASE RESETS ============ */
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+html { scroll-behavior: smooth; }
+
+/* ============ HERO GLOWS ============ */
+.hero-glow-tr {
+  position: absolute; top: -120px; right: -80px;
+  width: 250px; height: 250px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(75,163,212,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-glow-bl {
+  position: absolute; bottom: -80px; left: 10%;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,196,154,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .hero-glow-tr { width: 400px; height: 400px; }
+  .hero-glow-bl { width: 300px; height: 300px; left: 20%; }
+}
+
+/* ============ CTA GLOW ============ */
+.cta-glow {
+  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,0.08); pointer-events: none;
+}
+
+/* ============ FADE-UP ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { opacity: 0; animation: fadeUp 0.5s ease forwards; }
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.2s; }
+.fade-up-3 { animation-delay: 0.3s; }
+.fade-up-4 { animation-delay: 0.4s; }
+.fade-up-5 { animation-delay: 0.5s; }
+
+/* ============ HERO ILLUSTRATION ANIMATIONS ============ */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes heroPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes heroRotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes heroDash {
+  to { stroke-dashoffset: 0; }
+}
+.hero-float { animation: heroFloat 6s ease-in-out infinite; }
+.hero-float-delay { animation: heroFloat 6s ease-in-out 1.5s infinite; }
+.hero-pulse { animation: heroPulse 4s ease-in-out infinite; }
+.hero-pulse-delay { animation: heroPulse 4s ease-in-out 1s infinite; }
+.hero-rotate { animation: heroRotateSlow 20s linear infinite; transform-origin: center; }
+.hero-dash {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: heroDash 2s ease forwards 0.8s;
+}
+
+/* ============ STEP CONNECTOR ============ */
+@media (min-width: 768px) {
+  .step-connector::after {
+    content: '\2192';
+    position: absolute; right: -8px; top: 16px;
+    color: rgba(75,163,212,0.35); font-size: 18px;
+  }
+}
+
+/* ============ MOBILE MENU ============ */
+.mobile-fullscreen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0a2540;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.mobile-fullscreen.open {
+  opacity: 1; visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-fullscreen .menu-link {
+  opacity: 0; transform: translateY(20px);
+}
+.mobile-fullscreen.open .menu-link {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.mobile-fullscreen.open .menu-link:nth-child(1) { transition-delay: 50ms; }
+.mobile-fullscreen.open .menu-link:nth-child(2) { transition-delay: 100ms; }
+.mobile-fullscreen.open .menu-link:nth-child(3) { transition-delay: 150ms; }
+.mobile-fullscreen.open .menu-link:nth-child(4) { transition-delay: 200ms; }
+.mobile-fullscreen .menu-cta {
+  opacity: 0; transform: translateY(20px);
+}
+.mobile-fullscreen.open .menu-cta {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: 250ms;
+}
+
+/* ============ SCROLL OFFSET ============ */
+section[id] { scroll-margin-top: 68px; }
+
+/* ============ FOCUS VISIBLE ============ */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #4ba3d4;
+  outline-offset: 2px;
+}
+
+/* ============ FORM VALIDATION ============ */
+input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+input:valid:not(:placeholder-shown), textarea:valid:not(:placeholder-shown) {
+  border-color: #22c55e;
+}
+.field-error {
+  color: #ef4444;
+  font-size: 11px;
+  margin-top: 4px;
+  display: none;
+}
+input:invalid:not(:placeholder-shown) ~ .field-error,
+textarea:invalid:not(:placeholder-shown) ~ .field-error {
+  display: block;
+}
+.form-submitted input:invalid,
+.form-submitted textarea:invalid {
+  border-color: #ef4444;
+}
+.form-submitted input:invalid ~ .field-error,
+.form-submitted textarea:invalid ~ .field-error {
+  display: block;
+}
+
+/* ============ SCROLL REVEAL ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ SKIP LINK ============ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  background: #0A2540;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============ ACTIVE NAV INDICATOR (index only) ============ */
+.nav-link.active {
+  color: #0A2540;
+  position: relative;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4BA3D4;
+  border-radius: 1px;
+}
+
+/* ============ SERVICE CARDS ============ */
+.service-card {
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.1);
+  border-color: #4ba3d4;
+}
+
+/* ============ TECH LOGOS ============ */
+.tech-logo {
+  color: #9ca3af;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tech-logo:hover {
+  opacity: 1;
+  color: var(--brand-color, #4BA3D4);
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { animation: none; opacity: 1; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .service-card:hover { transform: none; }
+}

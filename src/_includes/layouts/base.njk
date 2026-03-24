@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  {% include "partials/head-meta.njk" %}
+  {% include "partials/head-seo.njk" %}
+  {% if includeTracking %}
+    {% include "partials/head-schema.njk" %}
+    {% include "partials/head-gtm.njk" %}
+    {% include "partials/head-pixel.njk" %}
+  {% endif %}
+</head>
+<body class="{{ bodyClass or 'font-body text-gray-800 antialiased' }}">
+  {{ content | safe }}
+</body>
+</html>

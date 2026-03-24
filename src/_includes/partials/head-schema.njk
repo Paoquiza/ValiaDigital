@@ -1,0 +1,79 @@
+{% if schemaType == "home" %}
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.ogImage }}",
+    "email": "{{ site.email }}",
+    "telephone": "+{{ site.phone }}",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Paola Quiroz",
+        "jobTitle": "Co-fundadora — Líder de Calidad & Operaciones"
+      },
+      {
+        "@type": "Person",
+        "name": "Alejandro Almazan",
+        "jobTitle": "Co-fundador — Líder Técnico & Estrategia"
+      }
+    ],
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marketing Digital",
+    "description": "Estrategias creativas que conectan tu marca con el cliente correcto en el momento exacto.",
+    "provider": { "@type": "Organization", "name": "{{ site.name }}" },
+    "url": "{{ site.url }}/marketing-digital.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Automatización de Procesos",
+    "description": "Eliminamos tareas repetitivas para que tu equipo se enfoque en lo que realmente importa.",
+    "provider": { "@type": "Organization", "name": "{{ site.name }}" },
+    "url": "{{ site.url }}/automatizacion.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Desarrollo Tecnológico",
+    "description": "Soluciones digitales a medida: webs, apps y sistemas que se adaptan a tu operación.",
+    "provider": { "@type": "Organization", "name": "{{ site.name }}" },
+    "url": "{{ site.url }}/desarrollo.html"
+  }
+]
+</script>
+{% elif schemaType == "service" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ schemaServiceName }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "description": "{{ description }}",
+  "areaServed": "MX",
+  "serviceType": "{{ schemaServiceName }}"
+}
+</script>
+{% endif %}
