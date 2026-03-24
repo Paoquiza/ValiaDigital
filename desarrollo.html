@@ -119,8 +119,38 @@
     .fade-up-3 { animation-delay: 0.3s; }
     .fade-up-4 { animation-delay: 0.4s; }
 
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .mobile-menu.open { max-height: 320px; }
+    /* Mobile menu — fullscreen */
+    .mobile-fullscreen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #0a2540;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    .mobile-fullscreen.open {
+      opacity: 1; visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .mobile-fullscreen .menu-link {
+      opacity: 0; transform: translateY(20px);
+    }
+    .mobile-fullscreen.open .menu-link {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .mobile-fullscreen.open .menu-link:nth-child(1) { transition-delay: 50ms; }
+    .mobile-fullscreen.open .menu-link:nth-child(2) { transition-delay: 100ms; }
+    .mobile-fullscreen.open .menu-link:nth-child(3) { transition-delay: 150ms; }
+    .mobile-fullscreen.open .menu-link:nth-child(4) { transition-delay: 200ms; }
+    .mobile-fullscreen .menu-cta {
+      opacity: 0; transform: translateY(20px);
+    }
+    .mobile-fullscreen.open .menu-cta {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition-delay: 250ms;
+    }
 
     section[id] { scroll-margin-top: 68px; }
 
@@ -226,16 +256,21 @@
       </button>
     </div>
 
-    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-border-c">
-      <div class="px-5 py-4 flex flex-col gap-4">
-        <a href="index.html#servicios" class="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer mobile-link">Servicios</a>
-        <a href="index.html#proceso" class="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer mobile-link">Proceso</a>
-        <a href="index.html#nosotros" class="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer mobile-link">Nosotros</a>
-        <a href="#contacto" class="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200 cursor-pointer mobile-link">Contacto</a>
-        <a href="#contacto" class="bg-brand text-white text-sm font-medium px-6 py-3 rounded-lg text-center hover:bg-brand-hover transition-colors duration-200 cursor-pointer cta-btn mobile-link">Hablemos →</a>
-      </div>
-    </div>
   </nav>
+
+  <!-- Fullscreen mobile menu -->
+  <div id="mobile-menu" class="mobile-fullscreen md:hidden" role="dialog" aria-label="Menú de navegación">
+    <button id="menu-close" class="absolute top-6 right-6 p-2 cursor-pointer" aria-label="Cerrar menú">
+      <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <nav class="flex flex-col items-center gap-10">
+      <a href="index.html#servicios" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Servicios</a>
+      <a href="index.html#proceso" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Proceso</a>
+      <a href="index.html#nosotros" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Nosotros</a>
+      <a href="#contacto" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Contacto</a>
+    </nav>
+    <a href="#contacto" class="mt-12 inline-block text-white text-sm font-semibold px-12 py-4 rounded-xl bg-brand hover:bg-[#5bb3e4] transition-colors duration-300 menu-cta mobile-link">Hablemos →</a>
+  </div>
 
   <!-- ============ HERO ============ -->
   <section class="bg-brand-dark relative overflow-hidden py-12 sm:py-20 md:py-24 px-5 sm:px-6 md:px-10" id="inicio">
@@ -264,8 +299,8 @@
         </div>
       </div>
 
-      <!-- Right column — illustration -->
-      <div class="flex items-center justify-center md:justify-end overflow-hidden" aria-hidden="true">
+      <!-- Right column — illustration (hidden on mobile) -->
+      <div class="hidden md:flex items-center justify-center md:justify-end overflow-hidden" aria-hidden="true">
         <svg viewBox="0 0 480 420" class="w-[280px] h-[245px] sm:w-[340px] sm:h-[298px] md:w-full md:h-auto md:max-w-[480px]" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Background dot grid -->
           <g opacity="0.07">
@@ -593,23 +628,24 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
+    const menuClose = document.getElementById('menu-close');
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuIcon.setAttribute('d', isOpen
-        ? 'M6 18L18 6M6 6l12 12'
-        : 'M4 6h16M4 12h16M4 18h16'
-      );
-    });
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
 
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
     document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-      });
+      link.addEventListener('click', closeMenu);
     });
 
     const form = document.getElementById('contact-form');
