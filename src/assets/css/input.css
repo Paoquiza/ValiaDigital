@@ -7,22 +7,62 @@
 body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
 html { scroll-behavior: smooth; }
 
+/* ============ NAV STATES ============ */
+.nav-transparent {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+.nav-transparent .nav-text {
+  color: rgba(240, 248, 255, 0.9);
+  font-weight: 500;
+}
+.nav-transparent .nav-text:hover {
+  color: #FFFFFF;
+}
+.nav-transparent .nav-hamburger-icon {
+  color: #F0F8FF;
+}
+.nav-transparent svg[role="img"] {
+  color: #F0F8FF;
+  transition: color 0.3s ease;
+}
+.nav-solid svg[role="img"] {
+  color: #0d0d0d;
+  transition: color 0.3s ease;
+}
+
+.nav-solid {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #EAECF0;
+}
+.nav-solid .nav-text {
+  color: #6b7280;
+}
+.nav-solid .nav-text:hover {
+  color: #111827;
+}
+.nav-solid .nav-hamburger-icon {
+  color: #374151;
+}
+
 /* ============ HERO GLOWS ============ */
 .hero-glow-tr {
-  position: absolute; top: -120px; right: -80px;
-  width: 250px; height: 250px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(75,163,212,0.12) 0%, transparent 70%);
+  position: absolute; top: -150px; right: -100px;
+  width: 350px; height: 350px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(75,163,212,0.2) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-glow-bl {
-  position: absolute; bottom: -80px; left: 10%;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,196,154,0.08) 0%, transparent 70%);
+  position: absolute; bottom: -100px; left: 5%;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,196,154,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 @media (min-width: 768px) {
-  .hero-glow-tr { width: 400px; height: 400px; }
-  .hero-glow-bl { width: 300px; height: 300px; left: 20%; }
+  .hero-glow-tr { width: 600px; height: 600px; top: -200px; right: -150px; }
+  .hero-glow-bl { width: 500px; height: 500px; left: 15%; bottom: -150px; }
 }
 
 /* ============ CTA GLOW ============ */
@@ -30,6 +70,15 @@ html { scroll-behavior: smooth; }
   position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
   width: 600px; height: 200px; border-radius: 50%;
   background: rgba(255,255,255,0.08); pointer-events: none;
+}
+
+/* ============ SCROLL INDICATOR ============ */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(8px); opacity: 0.8; }
+}
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
 /* ============ FADE-UP ANIMATIONS ============ */
@@ -114,7 +163,7 @@ html { scroll-behavior: smooth; }
 }
 
 /* ============ SCROLL OFFSET ============ */
-section[id] { scroll-margin-top: 68px; }
+section[id] { scroll-margin-top: 76px; }
 
 /* ============ FOCUS VISIBLE ============ */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
@@ -157,6 +206,41 @@ textarea:invalid:not(:placeholder-shown) ~ .field-error {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============ STAGGERED CARD REVEAL ============ */
+.reveal-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-card[data-delay="1"] { transition-delay: 0.1s; }
+.reveal-card[data-delay="2"] { transition-delay: 0.25s; }
+.reveal-card[data-delay="3"] { transition-delay: 0.4s; }
+.reveal-card[data-delay="4"] { transition-delay: 0.55s; }
+
+/* ============ PROGRESS LINE REVEAL ============ */
+.progress-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease-out 0.05s;
+}
+.reveal.visible .progress-line {
+  transform: scaleX(1);
+}
+
+/* Mobile vertical */
+.progress-line-v {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.8s ease-out 0.05s;
+}
+.reveal.visible .progress-line-v {
+  transform: scaleY(1);
 }
 
 /* ============ SKIP LINK ============ */
@@ -203,24 +287,10 @@ textarea:invalid:not(:placeholder-shown) ~ .field-error {
   border-color: #4ba3d4;
 }
 
-/* ============ TECH LOGOS ============ */
-.tech-logo {
-  color: #9ca3af;
-  opacity: 0.5;
-  transition: opacity 0.3s ease, color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tech-logo:hover {
-  opacity: 1;
-  color: var(--brand-color, #4BA3D4);
-}
-
 /* ============ REDUCED MOTION ============ */
 @media (prefers-reduced-motion: reduce) {
   .fade-up { animation: none; opacity: 1; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal-card, .progress-line, .progress-line-v { opacity: 1; transform: none; transition: none; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   .service-card:hover { transform: none; }
 }

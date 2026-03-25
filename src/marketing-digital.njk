@@ -1,224 +1,267 @@
 ---
 layout: layouts/main.njk
 title: "Marketing Digital para PyMEs | ValiaDigital"
-description: "Estrategias de marketing digital personalizadas para PyMEs. Campañas multicanal, métricas en tiempo real y contenido que convierte. Agenda tu consulta gratuita."
+description: "Campañas en Google y Meta con métricas claras para PyMEs. Sabes a dónde va cada peso. Acceso total a tus datos, sin contratos de permanencia. Consulta gratuita."
 canonical: "https://valiadigital.io/marketing-digital.html"
 permalink: /marketing-digital.html
 isHome: false
+isService: true
 schemaType: "service"
 schemaServiceName: "Marketing Digital"
 schemaServiceDescription: "Estrategias de marketing digital personalizadas para PyMEs. Campañas multicanal, métricas en tiempo real y contenido que convierte."
-contactTitle: "Impulsa tu marca hoy"
+contactTitle: "Hablemos"
 contactPlaceholder: "Cuéntanos sobre tu proyecto de marketing digital"
 contactSubject: "Consulta Marketing Digital - ValiaDigital"
 contactService: "Marketing Digital"
 ---
 
 <!-- ============ HERO ============ -->
-<section class="bg-brand-dark relative overflow-hidden py-12 sm:py-20 md:py-24 px-5 sm:px-6 md:px-10" id="inicio">
+<section class="relative overflow-hidden min-h-screen flex items-center py-12 sm:py-20 md:py-24 px-5 sm:px-6 md:px-10" id="inicio" style="background: linear-gradient(135deg, #0A2540 0%, #0d2f4f 40%, #0A2540 70%, #071e35 100%)">
   <div class="hero-glow-tr" aria-hidden="true"></div>
   <div class="hero-glow-bl" aria-hidden="true"></div>
 
-  <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-    <!-- Left column — text -->
-    <div>
-      <a href="index.html#servicios" class="fade-up fade-up-1 inline-flex items-center gap-2 text-muted text-xs hover:text-brand transition-colors duration-200 mb-6">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
-        Volver a servicios
-      </a>
+  <!-- Grid dots pattern -->
+  <svg class="absolute inset-0 w-full h-full z-[1] pointer-events-none" style="opacity:0.04" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="mkt-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="20" cy="20" r="1" fill="#ffffff"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#mkt-grid)"/>
+  </svg>
 
-      <h1 class="fade-up fade-up-2 font-display font-extrabold text-[26px] sm:text-3xl md:text-5xl text-[#F0F8FF] leading-[1.2] tracking-tight mb-5">
-        Marketing Digital que <span class="text-brand">conecta</span> y <span class="text-accent">convierte</span>
-      </h1>
+  <!-- Network constellation -->
+  <div id="hero-constellation" class="absolute inset-0 hidden sm:block"></div>
 
-      <p class="fade-up fade-up-3 text-base text-muted leading-relaxed mb-10 font-light max-w-xl">
-        Estrategias creativas y basadas en datos que conectan tu marca con el cliente correcto en el momento exacto. Más visibilidad, más leads, más ventas.
-      </p>
+  <div class="max-w-3xl mx-auto relative z-10 text-center">
+    <!-- H1 -->
+    <h1 class="fade-up fade-up-2 font-display font-extrabold text-[28px] sm:text-4xl md:text-5xl lg:text-[56px] text-[#F0F8FF] leading-[1.15] tracking-tight mb-6">
+      Marketing Digital que <span class="text-brand">conecta</span> y <span class="text-accent">convierte</span>
+    </h1>
 
-      <div class="fade-up fade-up-4 flex flex-col sm:flex-row gap-3">
-        <a href="#contacto" class="bg-brand text-white font-body text-[13px] sm:text-sm font-medium px-6 py-3.5 rounded-lg hover:bg-brand-hover transition-colors duration-200 cursor-pointer text-center cta-btn">Agenda tu consulta gratuita →</a>
-        <a href="#beneficios" class="bg-transparent text-muted font-body text-sm px-6 py-3.5 rounded-lg border border-brand/25 hover:border-brand hover:text-brand transition-all duration-200 cursor-pointer text-center">Ver beneficios</a>
+    <!-- Subtext -->
+    <p class="fade-up fade-up-3 text-lg sm:text-xl text-muted leading-relaxed mb-10 max-w-2xl mx-auto">
+      No hacemos campañas genéricas. Medimos cada peso que inviertes en Google y Meta, optimizamos hasta que los números funcionen y te damos acceso completo a tus datos.
+    </p>
+
+    <!-- Buttons -->
+    <div class="fade-up fade-up-3 flex flex-col sm:flex-row gap-3 justify-center mb-12">
+      <a href="#contacto" class="group bg-brand text-white font-body text-sm sm:text-base font-semibold px-8 py-4 rounded-xl hover:bg-brand-hover transition-all duration-200 cursor-pointer text-center cta-btn shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/35 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">Agenda tu consulta gratuita <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+      <a href="#beneficios" class="bg-transparent text-muted font-body text-sm sm:text-base font-medium px-8 py-4 rounded-xl border border-white/[0.12] hover:border-brand hover:text-brand transition-all duration-200 cursor-pointer text-center">Ver beneficios</a>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="fade-up fade-up-4 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
+      <div class="flex items-center gap-2.5 justify-center">
+        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/15 flex-shrink-0" aria-hidden="true">
+          <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        </span>
+        <span class="text-sm sm:text-base text-[#F0F8FF] font-medium">Consulta sin costo</span>
+      </div>
+      <div class="flex items-center gap-2.5 justify-center">
+        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/15 flex-shrink-0" aria-hidden="true">
+          <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        </span>
+        <span class="text-sm sm:text-base text-[#F0F8FF] font-medium">Acceso total a tus métricas</span>
+      </div>
+      <div class="flex items-center gap-2.5 justify-center">
+        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/15 flex-shrink-0" aria-hidden="true">
+          <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        </span>
+        <span class="text-sm sm:text-base text-[#F0F8FF] font-medium">Sin contratos de permanencia</span>
       </div>
     </div>
-
-    <!-- Right column — illustration (hidden on mobile) -->
-    <div class="hidden md:flex items-center justify-center md:justify-end overflow-hidden" aria-hidden="true">
-      <svg viewBox="0 0 480 420" class="w-[280px] h-[245px] sm:w-[340px] sm:h-[298px] md:w-full md:h-auto md:max-w-[480px]" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background dot grid -->
-        <g opacity="0.07">
-          <circle cx="40" cy="40" r="2" fill="#4BA3D4"/><circle cx="80" cy="40" r="2" fill="#4BA3D4"/><circle cx="120" cy="40" r="2" fill="#4BA3D4"/><circle cx="160" cy="40" r="2" fill="#4BA3D4"/><circle cx="200" cy="40" r="2" fill="#4BA3D4"/>
-          <circle cx="40" cy="80" r="2" fill="#4BA3D4"/><circle cx="80" cy="80" r="2" fill="#4BA3D4"/><circle cx="120" cy="80" r="2" fill="#4BA3D4"/><circle cx="160" cy="80" r="2" fill="#4BA3D4"/><circle cx="200" cy="80" r="2" fill="#4BA3D4"/>
-          <circle cx="40" cy="120" r="2" fill="#4BA3D4"/><circle cx="80" cy="120" r="2" fill="#4BA3D4"/><circle cx="120" cy="120" r="2" fill="#4BA3D4"/><circle cx="160" cy="120" r="2" fill="#4BA3D4"/><circle cx="200" cy="120" r="2" fill="#4BA3D4"/>
-        </g>
-
-        <!-- Bar chart — ascending -->
-        <g class="hero-float">
-          <rect x="60" y="200" width="50" height="160" rx="10" fill="#4BA3D4" fill-opacity="0.12" stroke="#4BA3D4" stroke-opacity="0.25" stroke-width="1.5"/>
-          <rect x="70" y="280" width="30" height="72" rx="6" fill="#4BA3D4" fill-opacity="0.35"/>
-          <rect x="130" y="160" width="50" height="200" rx="10" fill="#4BA3D4" fill-opacity="0.12" stroke="#4BA3D4" stroke-opacity="0.25" stroke-width="1.5"/>
-          <rect x="140" y="220" width="30" height="132" rx="6" fill="#4BA3D4" fill-opacity="0.5"/>
-          <rect x="200" y="110" width="50" height="250" rx="10" fill="#4BA3D4" fill-opacity="0.12" stroke="#4BA3D4" stroke-opacity="0.25" stroke-width="1.5"/>
-          <rect x="210" y="160" width="30" height="192" rx="6" fill="#4BA3D4" fill-opacity="0.7"/>
-          <!-- Trend line -->
-          <path d="M85 270 L155 210 L225 150" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.8"/>
-          <circle cx="85" cy="270" r="4" fill="#34d399" opacity="0.8"/>
-          <circle cx="155" cy="210" r="4" fill="#34d399" opacity="0.8"/>
-          <circle cx="225" cy="150" r="4" fill="#34d399" opacity="0.8"/>
-        </g>
-
-        <!-- Megaphone -->
-        <g class="hero-float-delay" transform="translate(300, 60)">
-          <rect x="0" y="0" width="140" height="100" rx="16" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-          <path d="M40 30 L90 15 L90 85 L40 70 Z" fill="#4BA3D4" fill-opacity="0.2" stroke="#4BA3D4" stroke-opacity="0.4" stroke-width="1.5" stroke-linejoin="round"/>
-          <rect x="20" y="30" width="22" height="40" rx="5" fill="#4BA3D4" fill-opacity="0.3"/>
-          <line x1="95" y1="30" x2="120" y2="22" stroke="#34d399" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-          <line x1="95" y1="50" x2="125" y2="50" stroke="#34d399" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-          <line x1="95" y1="70" x2="120" y2="78" stroke="#34d399" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-        </g>
-
-        <!-- Social engagement cards -->
-        <g class="hero-pulse">
-          <!-- Like card -->
-          <rect x="310" y="190" width="110" height="50" rx="12" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
-          <path d="M335 220 L340 210 L345 210 L345 225 L335 225 Z M345 210 L355 200 C358 197 363 200 360 205 L355 212 L345 212 Z" fill="#4BA3D4" fill-opacity="0.5"/>
-          <text x="370" y="220" font-family="Inter, sans-serif" font-size="13" fill="#4BA3D4" fill-opacity="0.6" font-weight="600">2.4K</text>
-        </g>
-
-        <g class="hero-pulse-delay">
-          <!-- Share card -->
-          <rect x="330" y="260" width="110" height="50" rx="12" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
-          <circle cx="355" cy="285" r="4" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.6"/>
-          <circle cx="375" cy="275" r="4" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.6"/>
-          <circle cx="375" cy="295" r="4" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.6"/>
-          <line x1="359" y1="283" x2="371" y2="277" stroke="#34d399" stroke-width="1.2" opacity="0.5"/>
-          <line x1="359" y1="287" x2="371" y2="293" stroke="#34d399" stroke-width="1.2" opacity="0.5"/>
-          <text x="390" y="290" font-family="Inter, sans-serif" font-size="13" fill="#34d399" fill-opacity="0.6" font-weight="600">847</text>
-        </g>
-
-        <!-- Connection lines -->
-        <g opacity="0.12">
-          <path d="M250 150 Q280 120 310 100" stroke="#4BA3D4" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
-          <path d="M250 200 Q290 210 310 215" stroke="#4BA3D4" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
-          <path d="M250 250 Q300 270 330 285" stroke="#34d399" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
-        </g>
-
-        <!-- KPI badge -->
-        <g class="hero-float" transform="translate(300, 340)">
-          <rect x="0" y="0" width="130" height="55" rx="12" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.08" stroke-width="1"/>
-          <text x="15" y="22" font-family="Inter, sans-serif" font-size="10" fill="#4BA3D4" fill-opacity="0.5" font-weight="500">CTR</text>
-          <text x="15" y="42" font-family="Inter, sans-serif" font-size="18" fill="white" fill-opacity="0.6" font-weight="700">+34%</text>
-          <path d="M100 35 L110 20 L120 35" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-        </g>
-      </svg>
-    </div>
   </div>
+
+  <!-- Scroll indicator -->
+  <a href="#beneficios" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator" aria-label="Ver más">
+    <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+    </svg>
+  </a>
 </section>
 
 <!-- ============ BENEFICIOS ============ -->
-<section class="bg-white py-14 sm:py-20 px-5 sm:px-6 md:px-10 reveal" id="beneficios">
-  <div class="max-w-7xl mx-auto">
-    <p class="text-xs tracking-[0.14em] uppercase text-brand font-medium mb-3">Beneficios</p>
-    <h2 class="font-display font-extrabold text-xl sm:text-2xl md:text-[32px] text-brand-dark tracking-tight mb-3">Lo que obtienes con nuestro servicio</h2>
-    <p class="text-[15px] text-gray-500 mb-10 max-w-md leading-relaxed font-light">
-      No hacemos marketing genérico. Cada estrategia se diseña alrededor de tu negocio, tu audiencia y tus objetivos.
-    </p>
+<section class="relative py-16 sm:py-24 px-5 sm:px-6 md:px-10 overflow-hidden reveal bg-[#F7F9FB]" id="beneficios">
+  <div class="absolute top-[10%] right-[-8%] w-[300px] h-[300px] rounded-full bg-brand/[0.03] blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-[10%] left-[-5%] w-[250px] h-[250px] rounded-full bg-accent/[0.03] blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-      <!-- Benefit 1 -->
-      <div class="service-card border border-border-c rounded-xl p-7 bg-[#FAFBFC]">
-        <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-5 bg-brand/10" aria-hidden="true">
-          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-base text-brand-dark mb-2.5">Estrategia personalizada</h3>
-        <p class="text-[13px] text-gray-400 leading-relaxed font-light">Analizamos tu marca, tu competencia y tu mercado para crear un plan único que funcione para ti.</p>
-      </div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="text-center mb-14">
+      <p class="text-sm tracking-[0.14em] uppercase text-brand font-medium mb-3">Qué obtienes</p>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-dark tracking-tight mb-4">Sabes exactamente a dónde va cada peso</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-brand to-accent rounded-full mx-auto mb-5"></div>
+      <p class="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Números claros, acceso completo a tus datos y una estrategia que se ajusta hasta que funcione.</p>
+    </div>
 
-      <!-- Benefit 2 -->
-      <div class="service-card border border-border-c rounded-xl p-7 bg-[#FAFBFC]">
-        <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-5 bg-accent/10" aria-hidden="true">
-          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
+    <!-- Stats hero -->
+    <p class="text-xs tracking-[0.14em] uppercase text-gray-400 font-medium mb-4 text-center">Nuestros números</p>
+    <div class="rounded-2xl overflow-hidden mb-12" style="background: linear-gradient(135deg, #0A2540 0%, #0d2f4f 50%, #0A2540 100%)">
+      <div class="relative p-8 sm:p-12">
+        <div class="absolute top-[20%] right-[-5%] w-[200px] h-[200px] rounded-full bg-brand/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute bottom-[10%] left-[-3%] w-[150px] h-[150px] rounded-full bg-accent/8 blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div id="mkt-stats" class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-6 text-center">
+          <div>
+            <span class="font-display font-extrabold text-4xl sm:text-5xl text-brand block leading-none" data-count="3" data-prefix="" data-suffix="x">0x</span>
+            <div class="w-8 h-[2px] bg-brand/30 mx-auto mt-3 mb-2 rounded-full"></div>
+            <p class="text-sm text-muted font-medium">más leads con la misma inversión</p>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-4xl sm:text-5xl text-accent block leading-none" data-count="40" data-prefix="-" data-suffix="%">-0%</span>
+            <div class="w-8 h-[2px] bg-accent/30 mx-auto mt-3 mb-2 rounded-full"></div>
+            <p class="text-sm text-muted font-medium">en costo por adquisición</p>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-4xl sm:text-5xl text-amber-400 block leading-none" data-count="100" data-prefix="" data-suffix="%">0%</span>
+            <div class="w-8 h-[2px] bg-amber-400/30 mx-auto mt-3 mb-2 rounded-full"></div>
+            <p class="text-sm text-muted font-medium">acceso a tus datos</p>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-4xl sm:text-5xl text-violet-400 block leading-none" data-count="24" data-prefix="" data-suffix="h">0h</span>
+            <div class="w-8 h-[2px] bg-violet-400/30 mx-auto mt-3 mb-2 rounded-full"></div>
+            <p class="text-sm text-muted font-medium">tiempo de respuesta</p>
+          </div>
         </div>
-        <h3 class="font-display font-bold text-base text-brand-dark mb-2.5">Campañas multicanal</h3>
-        <p class="text-[13px] text-gray-400 leading-relaxed font-light">Presencia coordinada en redes sociales, Google Ads, email marketing y más para maximizar tu alcance.</p>
       </div>
+    </div>
 
-      <!-- Benefit 3 -->
-      <div class="service-card border border-border-c rounded-xl p-7 bg-[#FAFBFC]">
-        <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-5 bg-brand-dark/[0.08]" aria-hidden="true">
-          <svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+    <!-- How we do it -->
+    <p class="text-xs tracking-[0.14em] uppercase text-gray-400 font-medium mb-6 text-center">Cómo lo logramos</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="reveal-card group relative rounded-2xl p-7 sm:p-8 overflow-hidden border border-blue-100/60 shadow-sm hover:shadow-lg transition-all duration-300" data-delay="1" style="background: linear-gradient(145deg, #F0F7FF 0%, #E8F1FB 100%)">
+        <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-brand to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <svg class="absolute -bottom-8 -right-8 w-36 h-36 sm:w-44 sm:h-44 text-brand/[0.06] pointer-events-none" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 1.5a.75.75 0 0 1 .75.75V4.5a.75.75 0 0 1-1.5 0V2.25A.75.75 0 0 1 12 1.5ZM5.636 4.136a.75.75 0 0 1 1.06 0l1.592 1.591a.75.75 0 0 1-1.061 1.06l-1.591-1.59a.75.75 0 0 1 0-1.061Zm12.728 0a.75.75 0 0 1 0 1.06l-1.591 1.592a.75.75 0 1 1-1.06-1.061l1.59-1.591a.75.75 0 0 1 1.061 0Zm-6.816 4.496a.75.75 0 0 1 .82.311l5.228 7.917a.75.75 0 0 1-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 0 1-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 0 1-1.247-.606l.569-9.47a.75.75 0 0 1 .554-.679ZM3 10.5a.75.75 0 0 1 .75-.75H6a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 10.5Zm14.25 0a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H18a.75.75 0 0 1-.75-.75Zm-8.962 3.712a.75.75 0 0 1 0 1.061l-1.591 1.591a.75.75 0 1 1-1.061-1.06l1.591-1.592a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+        <div class="relative">
+          <h3 class="font-display font-bold text-lg text-blue-900 mb-2">Tu estrategia, no una plantilla</h3>
+          <p class="text-sm text-blue-900/60 leading-relaxed">Plan diseñado para tu mercado, tu competencia y tu audiencia específica.</p>
         </div>
-        <h3 class="font-display font-bold text-base text-brand-dark mb-2.5">Métricas en tiempo real</h3>
-        <p class="text-[13px] text-gray-400 leading-relaxed font-light">Dashboards claros y reportes periódicos para que siempre sepas qué funciona y qué optimizar.</p>
       </div>
+      <div class="reveal-card group relative rounded-2xl p-7 sm:p-8 overflow-hidden border border-emerald-100/60 shadow-sm hover:shadow-lg transition-all duration-300" data-delay="2" style="background: linear-gradient(145deg, #F0FDF9 0%, #E6FAF4 100%)">
+        <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-accent to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <svg class="absolute -bottom-8 -right-8 w-36 h-36 sm:w-44 sm:h-44 text-accent/[0.06] pointer-events-none" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.29 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.68-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z" clip-rule="evenodd"/></svg>
+        <div class="relative">
+          <h3 class="font-display font-bold text-lg text-emerald-900 mb-2">Google, Meta y más en un solo lugar</h3>
+          <p class="text-sm text-emerald-900/60 leading-relaxed">Campañas coordinadas en todos los canales. Un equipo, una estrategia.</p>
+        </div>
+      </div>
+      <div class="reveal-card group relative rounded-2xl p-7 sm:p-8 overflow-hidden border border-slate-200/60 shadow-sm hover:shadow-lg transition-all duration-300" data-delay="3" style="background: linear-gradient(145deg, #F1F5F9 0%, #E8ECF1 100%)">
+        <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-slate-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <svg class="absolute -bottom-8 -right-8 w-36 h-36 sm:w-44 sm:h-44 text-slate-500/[0.06] pointer-events-none" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm4.5 7.5a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25a.75.75 0 0 1 .75-.75Zm3.75-1.5a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0V12Zm2.25-3a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0V9.75A.75.75 0 0 1 13.5 9Zm3.75-1.5a.75.75 0 0 0-1.5 0v9a.75.75 0 0 0 1.5 0v-9Z" clip-rule="evenodd"/></svg>
+        <div class="relative">
+          <h3 class="font-display font-bold text-lg text-slate-800 mb-2">Dashboards con tus datos reales</h3>
+          <p class="text-sm text-slate-700/60 leading-relaxed">Ves qué funciona, qué optimizamos y cuánto generó cada campaña.</p>
+        </div>
+      </div>
+      <div class="reveal-card group relative rounded-2xl p-7 sm:p-8 overflow-hidden border border-amber-100/60 shadow-sm hover:shadow-lg transition-all duration-300" data-delay="4" style="background: linear-gradient(145deg, #FFFBF0 0%, #FFF7E6 100%)">
+        <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-amber-400 to-amber-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <svg class="absolute -bottom-8 -right-8 w-36 h-36 sm:w-44 sm:h-44 text-amber-400/[0.06] pointer-events-none" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z" clip-rule="evenodd"/><path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z"/></svg>
+        <div class="relative">
+          <h3 class="font-display font-bold text-lg text-amber-800 mb-2">Contenido que genera leads</h3>
+          <p class="text-sm text-amber-900/60 leading-relaxed">Cada pieza tiene un objetivo claro: atraer, educar y convertir.</p>
+        </div>
+      </div>
+    </div>
 
-      <!-- Benefit 4 -->
-      <div class="service-card border border-border-c rounded-xl p-7 bg-[#FAFBFC]">
-        <div class="w-11 h-11 rounded-[10px] flex items-center justify-center mb-5 bg-brand/10" aria-hidden="true">
-          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-base text-brand-dark mb-2.5">Contenido que convierte</h3>
-        <p class="text-[13px] text-gray-400 leading-relaxed font-light">Creamos contenido estratégico que atrae, educa y convierte a tu audiencia en clientes reales.</p>
-      </div>
+    <!-- CTA -->
+    <div class="text-center mt-14 pt-10 border-t border-gray-200/60">
+      <p class="font-display font-bold text-xl sm:text-2xl text-brand-dark mb-2">¿Quieres saber qué estrategia funciona para tu negocio?</p>
+      <p class="text-gray-500 text-base sm:text-lg mb-7">Te lo decimos en una consulta gratuita de 30 minutos.</p>
+      <a href="#contacto" class="group inline-flex items-center gap-2 bg-brand text-white font-body font-semibold text-sm sm:text-base px-8 py-4 rounded-xl hover:bg-brand-hover transition-all duration-200 cursor-pointer shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/35 hover:-translate-y-0.5">Agendar consulta gratuita <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ============ PROCESO ============ -->
-<section class="bg-brand-dark py-14 sm:py-20 px-5 sm:px-6 md:px-10 reveal" id="proceso">
-  <div class="max-w-7xl mx-auto">
-    <p class="text-xs tracking-[0.14em] uppercase text-accent font-medium mb-3">Nuestro proceso</p>
-    <h2 class="font-display font-extrabold text-xl sm:text-2xl md:text-[32px] text-[#F0F8FF] tracking-tight mb-3">Cómo hacemos crecer tu marca</h2>
-    <p class="text-[15px] text-muted mb-12 font-light">Tres etapas claras para llevar tu marketing digital al siguiente nivel.</p>
+<section class="relative py-16 sm:py-24 px-5 sm:px-6 md:px-10 overflow-hidden reveal" id="proceso" style="background: linear-gradient(135deg, #0A2540 0%, #0d2f4f 50%, #0A2540 100%)">
+  <div class="absolute top-[20%] right-[-8%] w-[300px] h-[300px] rounded-full bg-brand/8 blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-[15%] left-[-5%] w-[250px] h-[250px] rounded-full bg-accent/6 blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-      <!-- Step 1 -->
-      <div class="relative">
-        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center mb-4" aria-hidden="true">
-          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
-        </div>
-        <p class="font-body text-[11px] text-brand tracking-[0.1em] font-medium mb-3">01 — ANÁLISIS DE MARCA</p>
-        <h3 class="font-display font-bold text-[15px] text-[#F0F8FF] mb-2">Conocemos tu marca a fondo</h3>
-        <p class="text-xs text-muted leading-relaxed font-light">Investigamos tu mercado, competencia, audiencia y posicionamiento actual para encontrar oportunidades reales de crecimiento.</p>
-      </div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="text-center mb-14">
+      <p class="text-sm tracking-[0.14em] uppercase text-accent font-medium mb-3">Nuestro proceso</p>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#F0F8FF] tracking-tight mb-4">Cada etapa tiene un entregable concreto</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-brand to-accent rounded-full mx-auto mb-5"></div>
+      <p class="text-base sm:text-lg text-muted max-w-xl mx-auto leading-relaxed">Sabes qué recibes en cada paso. Si algo no te convence, no hay factura.</p>
+    </div>
 
-      <!-- Step 2 -->
-      <div class="relative">
-        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center mb-4" aria-hidden="true">
-          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="reveal-card text-center" data-delay="1">
+        <div class="w-16 h-16 rounded-2xl bg-brand/20 border-2 border-brand shadow-lg shadow-brand/25 flex items-center justify-center mx-auto mb-5 backdrop-blur-sm">
+          <span class="font-display font-extrabold text-xl text-white">01</span>
         </div>
-        <p class="font-body text-[11px] text-brand tracking-[0.1em] font-medium mb-3">02 — ESTRATEGIA Y EJECUCIÓN</p>
-        <h3 class="font-display font-bold text-[15px] text-[#F0F8FF] mb-2">Creamos y lanzamos campañas</h3>
-        <p class="text-xs text-muted leading-relaxed font-light">Diseñamos la estrategia multicanal, creamos el contenido y lanzamos las campañas con objetivos claros y medibles.</p>
+        <p class="font-body text-sm text-brand tracking-[0.12em] font-semibold mb-2 uppercase">Análisis</p>
+        <h3 class="font-display font-bold text-lg text-[#F0F8FF] mb-3">Auditoría de tu marca</h3>
+        <p class="text-sm text-muted leading-relaxed">Recibes un <strong class="text-white font-semibold">reporte con diagnóstico</strong> de tu presencia digital, competencia y oportunidades detectadas.</p>
       </div>
+      <div class="reveal-card text-center" data-delay="2">
+        <div class="w-16 h-16 rounded-2xl bg-accent/20 border-2 border-accent shadow-lg shadow-accent/25 flex items-center justify-center mx-auto mb-5 backdrop-blur-sm">
+          <span class="font-display font-extrabold text-xl text-white">02</span>
+        </div>
+        <p class="font-body text-sm text-accent tracking-[0.12em] font-semibold mb-2 uppercase">Ejecución</p>
+        <h3 class="font-display font-bold text-lg text-[#F0F8FF] mb-3">Campañas en marcha</h3>
+        <p class="text-sm text-muted leading-relaxed">Creamos contenido, configuramos campañas en Google y Meta, y las <strong class="text-white font-semibold">lanzamos en máximo 2 semanas</strong>.</p>
+      </div>
+      <div class="reveal-card text-center" data-delay="3">
+        <div class="w-16 h-16 rounded-2xl bg-violet-400/20 border-2 border-violet-400 shadow-lg shadow-violet-400/25 flex items-center justify-center mx-auto mb-5 backdrop-blur-sm">
+          <span class="font-display font-extrabold text-xl text-white">03</span>
+        </div>
+        <p class="font-body text-sm text-violet-400 tracking-[0.12em] font-semibold mb-2 uppercase">Optimización</p>
+        <h3 class="font-display font-bold text-lg text-[#F0F8FF] mb-3">Mejora cada mes</h3>
+        <p class="text-sm text-muted leading-relaxed"><strong class="text-white font-semibold">Cada mes recibes un reporte</strong> con métricas reales, qué optimizamos y qué sigue. Acceso total a tus datos.</p>
+      </div>
+    </div>
 
-      <!-- Step 3 -->
-      <div class="relative">
-        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center mb-4" aria-hidden="true">
-          <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
-        </div>
-        <p class="font-body text-[11px] text-brand tracking-[0.1em] font-medium mb-3">03 — OPTIMIZACIÓN CONTINUA</p>
-        <h3 class="font-display font-bold text-[15px] text-[#F0F8FF] mb-2">Mejoramos cada día</h3>
-        <p class="text-xs text-muted leading-relaxed font-light">Analizamos resultados, ajustamos estrategias y optimizamos campañas para maximizar tu retorno de inversión constantemente.</p>
-      </div>
+    <!-- CTA -->
+    <div class="text-center mt-14">
+      <p class="text-base sm:text-lg text-[#F0F8FF] font-display font-semibold mb-2">Si no te aportamos valor, te lo decimos nosotros primero.</p>
+      <p class="text-muted text-sm sm:text-base mb-6">Consulta gratuita, sin compromiso.</p>
+      <a href="#contacto" class="group inline-flex items-center gap-2 bg-brand text-white font-body font-semibold text-sm sm:text-base px-8 py-4 rounded-xl hover:bg-brand-hover transition-all duration-200 cursor-pointer shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/35 hover:-translate-y-0.5">Agendar consulta gratuita <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ============ OTROS SERVICIOS ============ -->
-<section class="bg-light-bg py-14 sm:py-20 px-5 sm:px-6 md:px-10 reveal">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="text-xs tracking-[0.14em] uppercase text-brand font-medium mb-3">Explora más</p>
-    <h2 class="font-display font-extrabold text-xl sm:text-2xl md:text-[32px] text-brand-dark tracking-tight mb-10">Conoce nuestros otros servicios</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-      <div class="service-card border border-border-c rounded-xl p-7 bg-white text-left">
-        <h3 class="font-display font-bold text-base text-brand-dark mb-2">Automatización de Procesos</h3>
-        <p class="text-[13px] text-gray-400 leading-relaxed font-light mb-4">Eliminamos tareas repetitivas para que tu equipo se enfoque en lo que realmente importa.</p>
-        <a href="automatizacion.html" class="inline-block text-xs text-brand font-medium hover:text-brand-hover transition-colors duration-200">Conocer más →</a>
+<section class="relative py-16 sm:py-24 px-5 sm:px-6 md:px-10 overflow-hidden reveal bg-white">
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="relative rounded-3xl overflow-hidden px-6 sm:px-10 md:px-14 pt-14 sm:pt-16 pb-20 sm:pb-28" style="background: linear-gradient(135deg, #0A2540 0%, #0d2f4f 50%, #0A2540 100%)">
+      <div class="absolute top-[20%] left-[-5%] w-[250px] h-[250px] rounded-full bg-brand/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[200px] h-[200px] rounded-full bg-accent/8 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 text-center mb-12">
+        <p class="text-sm tracking-[0.14em] uppercase text-accent font-medium mb-3">Más soluciones</p>
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#F0F8FF] tracking-tight mb-4">Complementa tu estrategia digital</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand to-accent rounded-full mx-auto mb-5"></div>
+        <p class="text-base sm:text-lg text-muted max-w-xl mx-auto leading-relaxed">El marketing funciona mejor cuando tu operación y tu tecnología también están optimizadas.</p>
       </div>
-      <div class="service-card border border-border-c rounded-xl p-7 bg-white text-left">
-        <h3 class="font-display font-bold text-base text-brand-dark mb-2">Desarrollo Tecnológico</h3>
-        <p class="text-[13px] text-gray-400 leading-relaxed font-light mb-4">Soluciones digitales a medida: webs, apps y sistemas que se adaptan a tu operación.</p>
-        <a href="desarrollo.html" class="inline-block text-xs text-brand font-medium hover:text-brand-hover transition-colors duration-200">Conocer más →</a>
+
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 max-w-4xl mx-auto -mb-8 sm:-mb-10">
+        <!-- Automatización -->
+        <a href="/automatizacion.html" class="reveal-card group relative rounded-2xl overflow-hidden" data-delay="1 border border-emerald-100/60 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col" style="background: linear-gradient(145deg, #F0FDF9 0%, #E6FAF4 100%)">
+          <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-accent to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg class="absolute -bottom-8 -right-10 w-40 h-40 sm:w-48 sm:h-48 text-accent/[0.08] pointer-events-none" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd"/></svg>
+          <div class="relative p-7 sm:p-8 pb-0">
+            <h3 class="font-display font-bold text-lg sm:text-xl text-emerald-900 mb-3">Automatización de Procesos</h3>
+            <p class="text-sm sm:text-[15px] text-emerald-900/60 leading-relaxed">Convertimos esas 5 horas semanales de captura manual en 5 minutos automatizados. Conectamos tus herramientas para que la información fluya sin errores.</p>
+          </div>
+          <div class="relative mt-auto pt-5 px-7 sm:px-8 py-4 bg-accent/[0.08] group-hover:bg-accent transition-colors duration-300 flex items-center justify-between">
+            <span class="text-sm text-accent font-semibold group-hover:text-white transition-colors duration-300">Conocer más</span>
+            <svg class="w-4 h-4 text-accent group-hover:text-white group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </div>
+        </a>
+
+        <!-- Desarrollo -->
+        <a href="/desarrollo.html" class="reveal-card group relative rounded-2xl overflow-hidden" data-delay="2 border border-slate-200/60 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col" style="background: linear-gradient(145deg, #F1F5F9 0%, #E8ECF1 100%)">
+          <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-slate-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <svg class="absolute -bottom-8 -right-10 w-40 h-40 sm:w-48 sm:h-48 text-slate-500/[0.08] pointer-events-none" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+          <div class="relative p-7 sm:p-8 pb-0">
+            <h3 class="font-display font-bold text-lg sm:text-xl text-slate-800 mb-3">Desarrollo Tecnológico</h3>
+            <p class="text-sm sm:text-[15px] text-slate-700/60 leading-relaxed">Sistemas, aplicaciones web y sitios que tu equipo realmente puede usar. Sin sobreingeniería, sin dependencia eterna del proveedor.</p>
+          </div>
+          <div class="relative mt-auto pt-5 px-7 sm:px-8 py-4 bg-brand-dark/[0.06] group-hover:bg-brand-dark transition-colors duration-300 flex items-center justify-between">
+            <span class="text-sm text-brand-dark font-semibold group-hover:text-white transition-colors duration-300">Conocer más</span>
+            <svg class="w-4 h-4 text-brand-dark group-hover:text-white group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </div>
+        </a>
       </div>
     </div>
   </div>

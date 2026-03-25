@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx eleventy:*)",
+      "Bash(npx @11ty/eleventy)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm install:*)",
+      "Bash(npx concurrently:*)",
+      "Bash(sips:*)",
+      "Bash(curl -s http://localhost:8080/marketing-digital.html)"
+    ]
+  }
+}

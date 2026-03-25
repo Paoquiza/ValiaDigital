@@ -17,3 +17,6 @@ includeTracking: true
 {% if isHome %}
 <script src="/assets/js/nav-indicator.js?v={{ buildHash }}" defer></script>
 {% endif %}
+{% if isHome or isService %}
+<script src="/assets/js/constellation.js?v={{ buildHash }}" defer></script>
+{% endif %}

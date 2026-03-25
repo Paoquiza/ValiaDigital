@@ -1,3 +1,19 @@
+// Nav scroll effect — transparent on hero, solid on scroll
+const mainNav = document.getElementById('main-nav');
+if (mainNav && mainNav.classList.contains('nav-transparent')) {
+  function updateNav() {
+    if (window.scrollY > 80) {
+      mainNav.classList.remove('nav-transparent');
+      mainNav.classList.add('nav-solid');
+    } else {
+      mainNav.classList.remove('nav-solid');
+      mainNav.classList.add('nav-transparent');
+    }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+}
+
 // Mobile menu
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -95,6 +111,43 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal-card').forEach(el => revealObserver.observe(el));
 } else {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  document.querySelectorAll('.reveal-card').forEach(el => el.classList.add('visible'));
 }
+
+// Animated stat counters
+document.querySelectorAll('[id$="-stats"], #stats-section').forEach(function(section) {
+  var counters = section.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+  var counted = false;
+
+  var countObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(function(counter) {
+          var target = parseInt(counter.getAttribute('data-count'), 10);
+          var prefix = counter.getAttribute('data-prefix') || '';
+          var suffix = counter.getAttribute('data-suffix') || '';
+          var duration = 1200;
+          var start = performance.now();
+
+          function update(now) {
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * target);
+            counter.textContent = prefix + current + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        });
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  countObserver.observe(section);
+});

@@ -4,6 +4,12 @@
     <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
   <nav class="flex flex-col items-center gap-10">
+    {% if isService %}
+    <a href="/index.html" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Inicio</a>
+    <a href="#beneficios" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Beneficios</a>
+    <a href="#proceso" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Proceso</a>
+    <a href="#contacto" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">Contacto</a>
+    {% else %}
     {% for link in navigation.main %}
     {% if link.anchor == "contacto" %}
     <a href="#contacto" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">{{ link.label }}</a>
@@ -11,6 +17,7 @@
     <a href="{{ prefix }}#{{ link.anchor }}" class="text-white text-2xl font-medium hover:text-brand transition-colors duration-300 menu-link mobile-link">{{ link.label }}</a>
     {% endif %}
     {% endfor %}
+    {% endif %}
   </nav>
   <a href="#contacto" class="mt-12 inline-block text-white text-sm font-semibold px-12 py-4 rounded-xl bg-brand hover:bg-[#5bb3e4] transition-colors duration-300 menu-cta mobile-link">Hablemos &rarr;</a>
 </div>
