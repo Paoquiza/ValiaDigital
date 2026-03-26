@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   // Passthrough copy
   eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy("src/assets/lottie");
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
 
   // Build hash for cache busting

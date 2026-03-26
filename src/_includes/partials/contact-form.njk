@@ -98,19 +98,32 @@
             {% if contactService %}
             <input type="hidden" name="servicio" value="{{ contactService }}">
             {% endif %}
+            <input type="hidden" name="g-recaptcha-response" id="recaptchaToken">
             <button type="submit" class="group w-full bg-brand text-white font-body text-base sm:text-lg font-semibold px-6 py-4 sm:py-5 rounded-xl hover:bg-brand-hover transition-all duration-200 cursor-pointer cta-btn shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/35 hover:-translate-y-0.5 flex items-center justify-center gap-2">
               Enviar mensaje
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
             </button>
             <p class="text-center text-xs text-gray-400 mt-1">Te contacta directamente un fundador · Sin spam</p>
+            <p class="text-center text-[10px] text-gray-300 mt-2">Protegido por <a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400 transition-colors">reCAPTCHA</a></p>
           </form>
 
-          <div id="form-success" class="hidden text-center py-12">
-            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5" aria-hidden="true">
-              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <!-- Phase 1: Sending animation -->
+          <div id="form-sending" class="hidden">
+            <div class="flex flex-col items-center justify-center py-12 sm:py-16">
+              <lottie-player id="lottie-sending" src="/assets/lottie/sending.json" background="transparent" speed="1.3" style="width: 150px; height: 150px;"></lottie-player>
+              <h3 class="font-display font-bold text-xl text-brand-dark mb-1 sending-fade">Enviando mensaje...</h3>
+              <p class="text-sm text-gray-400 sending-fade">Esto tomará solo un momento</p>
             </div>
-            <h3 class="font-display font-bold text-xl text-brand-dark mb-2">¡Mensaje enviado!</h3>
-            <p class="text-base text-gray-500">Te contactamos en menos de 24 horas.</p>
+          </div>
+
+          <!-- Phase 2: Success animation -->
+          <div id="form-success" class="hidden">
+            <div class="flex flex-col items-center justify-center py-12 sm:py-16">
+              <lottie-player id="lottie-success" src="/assets/lottie/successfully.json" background="transparent" speed="0.8" style="width: 150px; height: 150px;"></lottie-player>
+              <h3 class="font-display font-bold text-2xl text-brand-dark mb-3 success-fade">¡Mensaje enviado!</h3>
+              <p class="text-base sm:text-lg text-gray-500 mb-2 success-fade success-fade-2">Te contactamos en menos de 24 horas.</p>
+              <p class="text-sm text-gray-400 success-fade success-fade-3">Revisa tu bandeja de entrada y WhatsApp.</p>
+            </div>
           </div>
         </div>
       </div>

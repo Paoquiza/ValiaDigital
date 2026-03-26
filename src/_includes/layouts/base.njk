@@ -8,8 +8,10 @@
     {% include "partials/head-gtm.njk" %}
     {% include "partials/head-pixel.njk" %}
   {% endif %}
+  <script src="https://www.google.com/recaptcha/api.js?render=6Ld3WJgsAAAAADF0nqqHHSSfSFbB6XhVJawU2g54" defer></script>
 </head>
 <body class="{{ bodyClass or 'font-body text-gray-800 antialiased' }}">
   {{ content | safe }}
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js" defer></script>
 </body>
 </html>

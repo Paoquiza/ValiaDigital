@@ -40,10 +40,82 @@ if (menuToggle && mobileMenu && menuClose) {
 }
 
 // Contact form submission
-const form = document.getElementById('contact-form');
-const successMsg = document.getElementById('form-success');
+var form = document.getElementById('contact-form');
+var successMsg = document.getElementById('form-success');
+var sendingMsg = document.getElementById('form-sending');
 
-if (form && successMsg) {
+function playLottie(id) {
+  var player = document.getElementById(id);
+  if (player) {
+    player.stop();
+    player.seek(0);
+    setTimeout(function() { player.play(); }, 50);
+  }
+}
+
+function resetFadeAnimations(container) {
+  var fades = container.querySelectorAll('.success-fade, .success-fade-2, .success-fade-3, .sending-fade');
+  fades.forEach(function(el) {
+    el.style.animation = 'none';
+    el.offsetHeight; // force reflow
+    el.style.animation = '';
+  });
+}
+
+function showFormAnimation() {
+  // Phase 1: fade out form only, left column stays
+  form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  form.style.opacity = '0';
+  form.style.transform = 'translateY(-10px)';
+
+  setTimeout(function() {
+    form.classList.add('hidden');
+    sendingMsg.classList.remove('hidden');
+    sendingMsg.style.opacity = '0';
+    sendingMsg.style.transform = 'none';
+    sendingMsg.style.transition = 'opacity 0.3s ease';
+    resetFadeAnimations(sendingMsg);
+    playLottie('lottie-sending');
+    requestAnimationFrame(function() { sendingMsg.style.opacity = '1'; });
+  }, 400);
+
+  // Phase 2: wait for sending animation to finish (~8s at speed 1), then show success
+  setTimeout(function() {
+    sendingMsg.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    sendingMsg.style.opacity = '0';
+    sendingMsg.style.transform = 'translateY(-10px)';
+
+    setTimeout(function() {
+      sendingMsg.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.style.opacity = '0';
+      successMsg.style.transform = 'none';
+      successMsg.style.transition = 'opacity 0.4s ease';
+      resetFadeAnimations(successMsg);
+      playLottie('lottie-success');
+      requestAnimationFrame(function() { successMsg.style.opacity = '1'; });
+    }, 400);
+  }, 6600);
+}
+
+// Dev preview function
+window.__previewFormAnimation = function() {
+  // Reset all states
+  form.classList.remove('hidden');
+  form.style.opacity = '1';
+  form.style.transform = 'none';
+  sendingMsg.classList.add('hidden');
+  sendingMsg.style.opacity = '1';
+  sendingMsg.style.transform = 'none';
+  successMsg.classList.add('hidden');
+  successMsg.style.opacity = '1';
+  successMsg.style.transform = 'none';
+
+  // Start animation
+  setTimeout(showFormAnimation, 300);
+};
+
+if (form && successMsg && sendingMsg) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     form.classList.add('form-submitted');
@@ -51,20 +123,25 @@ if (form && successMsg) {
       form.reportValidity();
       return;
     }
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Enviando...';
+    var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
+    btn.classList.add('opacity-80');
 
     try {
-      const res = await fetch(form.action, {
+      // Get reCAPTCHA v3 token
+      if (window.grecaptcha) {
+        var token = await grecaptcha.execute('6Ld3WJgsAAAAADF0nqqHHSSfSFbB6XhVJawU2g54', { action: 'submit' });
+        document.getElementById('recaptchaToken').value = token;
+      }
+
+      var res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
 
       if (res.ok) {
-        form.classList.add('hidden');
-        successMsg.classList.remove('hidden');
+        showFormAnimation();
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'generate_lead',
@@ -72,12 +149,12 @@ if (form && successMsg) {
           event_label: 'contact_form'
         });
       } else {
-        btn.textContent = 'Error, intenta de nuevo';
         btn.disabled = false;
+        btn.classList.remove('opacity-80');
       }
     } catch {
-      btn.textContent = 'Error, intenta de nuevo';
       btn.disabled = false;
+      btn.classList.remove('opacity-80');
     }
   });
 
