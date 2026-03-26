@@ -85,7 +85,8 @@
             </div>
             <div>
               <label for="telefono" class="block text-sm font-medium text-gray-600 mb-2">Teléfono / WhatsApp <span class="text-gray-400 font-normal">(opcional)</span></label>
-              <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" class="w-full border border-border-c rounded-xl px-4 py-3.5 text-base bg-[#F7F9FB] focus:bg-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all duration-200">
+              <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" minlength="10" maxlength="15" pattern="[\+]?[0-9\s]{10,15}" class="w-full border border-border-c rounded-xl px-4 py-3.5 text-base bg-[#F7F9FB] focus:bg-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all duration-200">
+              <p class="field-error">Ingresa un número de al menos 10 dígitos</p>
             </div>
             <div>
               <label for="mensaje" class="block text-sm font-medium text-gray-600 mb-2">Mensaje <span class="text-red-400">*</span></label>
