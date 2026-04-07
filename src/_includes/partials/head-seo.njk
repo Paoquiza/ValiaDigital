@@ -1,12 +1,15 @@
+{% set pageCanonical = canonical or (site.url + page.url) %}
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}">
-{% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+{% if noindex %}<meta name="robots" content="noindex, nofollow">
+{% else %}<link rel="canonical" href="{{ pageCanonical }}">
+{% endif %}
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ ogDescription or description }}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ canonical or site.url }}">
+<meta property="og:url" content="{{ pageCanonical }}">
 <meta property="og:image" content="{{ ogImage or site.ogImage }}">
 
 <!-- Twitter Card -->

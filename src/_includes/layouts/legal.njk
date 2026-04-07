@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
+includeTracking: true
 ---
+{% include "partials/gtm-noscript.njk" %}
 {% include "partials/nav-simple.njk" %}
 {{ content | safe }}
 {% include "partials/footer-simple.njk" %}
